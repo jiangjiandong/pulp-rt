@@ -369,7 +369,7 @@ void __rt_himax_capture(rt_camera_t *dev_cam, void *buffer, size_t bufferlen, rt
 
     rt_periph_copy_init(&call_event->copy, 0);
 
-    rt_periph_copy(&call_event->copy, UDMA_CHANNEL_ID(dev_cam->channel) + 0, (unsigned int) buffer, bufferlen, dev_cam->conf.cpiCfg, call_event);
+    rt_periph_copy(&call_event->copy, UDMA_CHANNEL_ID(dev_cam->channel) + 0, (unsigned int) buffer+2, bufferlen, dev_cam->conf.cpiCfg, call_event);
 
     __rt_wait_event_check(event, call_event);
 

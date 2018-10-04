@@ -713,6 +713,7 @@ void __rt_hyper_copy(int channel,
     __rt_hyper_copy_misaligned(channel, addr, hyper_addr, size, call_event, mbr, event != NULL);
   }
 
+  __rt_wait_event_check(event, call_event);
   rt_irq_restore(irq);
 }
 
